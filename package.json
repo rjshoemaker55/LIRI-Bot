@@ -11,9 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "api": "^1.0.0",
+    "axios": "^0.18.0",
     "bandsintown": "^1.0.1",
     "dotenv": "^7.0.0",
     "imdb-node-api": "^0.1.0",
+    "moment": "^2.24.0",
     "node-spotify-api": "^1.1.1",
     "obdb": "0.0.1",
     "omdb": "^0.8.0",
