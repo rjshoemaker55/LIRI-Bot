@@ -10,19 +10,27 @@ const inquirer = require ('inquirer');
 const fs = require ('fs');
 let movieId;
 
-console.log('')
-inquirer
-  .prompt ([
-    {
-      type: 'list',
-      name: 'todoinput',
-      message: 'What would you like to do?',
-      choices: ['Song Search', 'Movie Search', 'Concert Search', "Search What's in Random.txt"]
-    },
-  ])
-  .then (function (response) {
-    director (response.todoinput);
-  });
+function start () {
+  console.log ('');
+  inquirer
+    .prompt ([
+      {
+        type: 'list',
+        name: 'todoinput',
+        message: 'What would you like to do?',
+        choices: [
+          'Song Search',
+          'Movie Search',
+          'Concert Search',
+          "Search What's in Random.txt",
+        ],
+      },
+    ])
+    .then (function (response) {
+      director (response.todoinput);
+    });
+  return;
+}
 
 function director (command) {
   switch (command) {
@@ -36,7 +44,7 @@ function director (command) {
           },
         ])
         .then (function (response) {
-          spotifyThis ((response.songinput).replace(/ /g, '+'));
+          spotifyThis (response.songinput.replace (/ /g, '+'));
         });
       break;
 
@@ -50,7 +58,7 @@ function director (command) {
           },
         ])
         .then (function (response) {
-          movieThis ((response.movieinput).replace(/ /g, '+'));
+          movieThis (response.movieinput.replace (/ /g, '+'));
         });
       break;
 
@@ -64,7 +72,7 @@ function director (command) {
           },
         ])
         .then (function (response) {
-          concertThis ((response.concertinput).replace(/ /g, '+'));
+          concertThis (response.concertinput.replace (/ /g, '+'));
         });
       break;
 
@@ -80,15 +88,28 @@ function spotifyThis (query) {
       return console.log ('Error occurred: ' + err);
     }
 
+    var spotifyInfo = {
+      Name: response.tracks.items[0].name,
+      Artist: response.tracks.items[0].artists[0].name,
+      Album: response.tracks.items[0].album.name,
+      Preview: response.tracks.items[0].preview_url,
+    };
+
+    fs.appendFile ('log.txt', JSON.stringify (spotifyInfo, null, 4), err => {
+      if (err) throw err;
+
+    });
+
     console.log ('');
     console.log ('');
-    console.log ('\x1b[1m', response.tracks.items[0].name);
-    console.log ('\x1b[0m', '---------------------');
-    console.log ('Artist: ' + response.tracks.items[0].artists[0].name);
-    console.log ('Album: ' + response.tracks.items[0].album.name);
-    console.log ('Preview: ' + response.tracks.items[0].preview_url);
-    console.log ('---------------------');
-    console.log ('');
+    console.log ('\x1b[1m', spotifyInfo.Name);
+    console.log ('\x1b[33m', '---------------------');
+    console.log ('\x1b[32m', 'Artist: ' + spotifyInfo.Artist);
+
+    console.log ('Album: ' + spotifyInfo.Album);
+    console.log ('Preview: ' + spotifyInfo.Preview);
+    console.log ('\x1b[33m', '---------------------');
+    console.log ('\x1b[0m', '');
   });
 }
 
@@ -112,27 +133,53 @@ function movieInfoSearch (movieId) {
       tomatoes: true,
     })
     .then (response => {
+      var movieInfo = {
+        Title: response.title,
+        Year: response.year,
+        IMDB_Rating: response.imdbrating,
+        Rotten_Tomatoes_Rating: response.ratings[1].value,
+        Country: response.country,
+        Language: response.language,
+        Actors: [
+          response.actors[0],
+          response.actors[1],
+          response.actors[2],
+          response.actors[3],
+        ],
+        Plot: response.plot,
+      };
+
+      fs.appendFile ('log.txt', JSON.stringify (movieInfo, null, 4), err => {
+        // throws an error, you could also catch it here
+        if (err) throw err;
+
+      });
+
       console.log ('');
       console.log ('');
-      console.log ('\x1b[1m', response.title);
-      console.log ('\x1b[0m', '---------------------');
-      console.log ('Release Year : ' + response.year);
-      console.log ('IMDB Rating: ' + response.imdbrating);
-      console.log ('Rotten Tomatoes Rating: ', response.ratings[1].value);
-      console.log ('Country: ' + response.country);
-      console.log ('Language: ', response.language);
+      console.log ('\x1b[1m', movieInfo.Title);
+      console.log ('\x1b[33m', '---------------------');
+      console.log ('\x1b[32m', 'Release Year : ' + movieInfo.Year);
+      console.log ('IMDB Rating: ' + movieInfo.IMDB_Rating);
+      console.log (
+        'Rotten Tomatoes Rating: ',
+        movieInfo.Rotten_Tomatoes_Rating
+      );
+      console.log ('Country: ' + movieInfo.Country);
+      console.log ('Language: ', movieInfo.Language);
       console.log (
         'Actors: ',
-        response.actors[0] +
+        movieInfo.Actors[0] +
           ', ' +
-          response.actors[1] +
+          movieInfo.Actors[1] +
           ', ' +
-          response.actors[2] +
+          movieInfo.Actors[2] +
           ', ' +
-          response.actors[3]
+          movieInfo.Actors[3]
       );
-      console.log ('---------------------');
-      console.log ('');
+      console.log ('Plot' + movieInfo.Plot);
+      console.log ('\x1b[33m', '---------------------');
+      console.log ('\x1b[0m', '');
       console.log ('');
     })
     .catch (console.error);
@@ -147,16 +194,29 @@ function concertThis (query) {
     )
     .then (function (response) {
       for (var i = 0; i < response.data.length; i++) {
-        console.log ('');
-        console.log ('');
-        console.log ('---------------------');
-        console.log ('Location: ' + response.data[i].venue.name);
-        console.log (
-          'Date: ' + moment (response.data[i].datetime).format ('MM/DD/YYYY')
+        var concertInfo = {
+          Location: response.data[i].venue.name,
+          Date: moment (response.data[i].datetime).format ('MM/DD/YYYY'),
+          Additional_Info: response.data[i].description,
+        };
+        fs.appendFile (
+          'log.txt',
+          JSON.stringify (concertInfo, null, 4),
+          err => {
+
+            if (err) throw err;
+
+          }
         );
-        console.log ('Additional Info: ' + response.data[i].description);
-        console.log ('---------------------');
+
         console.log ('');
+        console.log ('');
+        console.log ('\x1b[33m', '---------------------');
+        console.log ('\x1b[32m', 'Location: ' + concertInfo.Location);
+        console.log ('Date: ' + concertInfo.Date);
+        console.log ('Additional Info: ' + concertInfo.Additional_Info);
+        console.log ('\x1b[33m', '---------------------');
+        console.log ('\x1b[0m', '');
       }
     });
 }
@@ -168,16 +228,18 @@ function doWhatItSays () {
 
     switch (dataArr[0]) {
       case 'spotify-this-song':
-      spotifyThis(dataArr[1])
-      break;
+        spotifyThis (dataArr[1]);
+        break;
 
       case 'movie-this':
-      movieThis(dataArr[1])
-      break;
+        movieThis (dataArr[1]);
+        break;
 
       case 'concert-this':
-      concertThis(dataArr[1])
-      break;
+        concertThis (dataArr[1]);
+        break;
     }
   });
 }
+
+start ();

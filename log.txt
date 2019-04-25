@@ -1,0 +1,126 @@
+{
+    "Name": "Tell My Why",
+    "Artist": "TEC",
+    "Album": "Tell My Why",
+    "Preview": "https://p.scdn.co/mp3-preview/8d5fa25a9183dabac2c5f69d5b3fe5e14ec79a4f?cid=763ce0ba89b74913bd7f6aa54b17a926"
+}{
+    "Name": "Telescope",
+    "Artist": "Cage The Elephant",
+    "Album": "Melophobia",
+    "Preview": "https://p.scdn.co/mp3-preview/c74ac6a723d6a8029902f6cb13c0f7784058ac92?cid=763ce0ba89b74913bd7f6aa54b17a926"
+}{
+    "Name": "Can't You See",
+    "Artist": "The Marshall Tucker Band",
+    "Album": "The Marshall Tucker Band",
+    "Preview": "https://p.scdn.co/mp3-preview/d45e51e0a250f7c867e27cc6bbc87337a812ee41?cid=763ce0ba89b74913bd7f6aa54b17a926"
+}
+{
+    "Title": "Hello, My Name Is Doris",
+    "Year": "2015",
+    "IMDB_Rating": "6.6",
+    "Rotten_Tomatoes_Rating": "84%",
+    "Country": "USA",
+    "Language": "English",
+    "Actors": [
+        "Sally Field",
+        "Edmund Lupinski",
+        "Norma Michaels",
+        "Stephen Root"
+    ],
+    "Plot": "A self-help seminar inspires a sixty-something woman to romantically pursue her younger co-worker."
+}{
+    "Title": "The Hateful Eight",
+    "Year": "2015",
+    "IMDB_Rating": "7.8",
+    "Rotten_Tomatoes_Rating": "74%",
+    "Country": "USA",
+    "Language": "English, Spanish, French",
+    "Actors": [
+        "Samuel L. Jackson",
+        "Kurt Russell",
+        "Jennifer Jason Leigh",
+        "Walton Goggins"
+    ],
+    "Plot": "In the dead of a Wyoming winter, a bounty hunter and his prisoner find shelter in a cabin currently inhabited by a collection of nefarious characters."
+}{
+    "Location": "Fox Theater with Warpaint",
+    "Date": "05/02/2019",
+    "Additional_Info": ""
+}{
+    "Location": "Just Like Heaven Festival",
+    "Date": "05/03/2019",
+    "Additional_Info": ""
+}{
+    "Location": "Rialto Theatre with Warpaint",
+    "Date": "05/05/2019",
+    "Additional_Info": ""
+}{
+    "Location": "Just Like Heaven Festival",
+    "Date": "05/04/2019",
+    "Additional_Info": ""
+}{
+    "Location": "White Oak Music Hall Lawn with Warpaint",
+    "Date": "05/07/2019",
+    "Additional_Info": ""
+}{
+    "Location": "The Criterion with Warpaint",
+    "Date": "05/08/2019",
+    "Additional_Info": ""
+}{
+    "Location": "Cleveland Masonic with Warpaint",
+    "Date": "05/11/2019",
+    "Additional_Info": ""
+}{
+    "Location": "EXPRESS LIVE! with Warpaint",
+    "Date": "05/12/2019",
+    "Additional_Info": ""
+}{
+    "Location": "Uptown Theater with Warpaint",
+    "Date": "05/09/2019",
+    "Additional_Info": ""
+}{
+    "Location": "20 Monroe Live with Warpaint",
+    "Date": "05/15/2019",
+    "Additional_Info": ""
+}{
+    "Location": "Stage AE with Warpaint",
+    "Date": "05/16/2019",
+    "Additional_Info": ""
+}{
+    "Location": "College Street Music Hall with Warpaint",
+    "Date": "05/17/2019",
+    "Additional_Info": ""
+}{
+    "Location": "Santa Teresa Festival",
+    "Date": "05/18/2019",
+    "Additional_Info": ""
+}{
+    "Location": "The Capitol Theatre with Warpaint",
+    "Date": "05/20/2019",
+    "Additional_Info": ""
+}{
+    "Location": "The Fillmore Detroit with Warpaint",
+    "Date": "05/13/2019",
+    "Additional_Info": ""
+}{
+    "Location": "Webster Hall with Warpaint",
+    "Date": "05/23/2019",
+    "Additional_Info": ""
+}{
+    "Location": "Webster Hall with Warpaint",
+    "Date": "05/24/2019",
+    "Additional_Info": ""
+}{
+    "Location": "Webster Hall with Warpaint",
+    "Date": "05/22/2019",
+    "Additional_Info": ""
+}{
+    "Location": "Schimanski - MGMT (DJ SET)",
+    "Date": "05/24/2019",
+    "Additional_Info": "Schimanski is excited to welcome MGMT to North 11th for a special DJ set appearance.\n\nFor tables: VIP@schimanskinyc.com\n\n21+"
+}"/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]""/n[object Object]"{
+    "Name": "Take It Or Leave It",
+    "Artist": "Sublime With Rome",
+    "Album": "Yours Truly (Deluxe)",
+    "Preview": "https://p.scdn.co/mp3-preview/07414e691e3dac19b9daac4f9f35fcc6b975ae81?cid=763ce0ba89b74913bd7f6aa54b17a926"
+}
