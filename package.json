@@ -1,0 +1,23 @@
+{
+  "name": "LIRI-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "keys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "api": "^1.0.0",
+    "bandsintown": "^1.0.1",
+    "dotenv": "^7.0.0",
+    "imdb-node-api": "^0.1.0",
+    "node-spotify-api": "^1.1.1",
+    "obdb": "0.0.1",
+    "omdb": "^0.8.0",
+    "omdbapi": "^3.0.0",
+    "spotify": "^0.3.0"
+  }
+}
